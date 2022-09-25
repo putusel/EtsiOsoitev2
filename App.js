@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { React} from 'react';
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, TextInput, Button, Dimensions } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
@@ -19,8 +20,8 @@ export default function App() {
       let coordinate = {
         latitude: data.results[0].locations[0].latLng.lat,
         longitude: data.results[0].locations[0].latLng.lng,
-        latitudeDelta: 0.0322, /*starting point Haaga-Helia*/
-        longitudeDelta: 0.0221} /*starting point Haaga-Helia*/
+        latitudeDelta: 0.0322, /*starting marker Haaga-Helia*/
+        longitudeDelta: 0.0221}/*starting marker Haaga-Helia*/
   
       setCoordinates(coordinate)
 
@@ -32,18 +33,27 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <MapView  style={styles.map}   
+      <MapView  
+        style={styles.map}   
         region={coordinates}>
         <Marker
           coordinate={coordinates}
           title={location} />
-        </MapView>
+      </MapView>
       <View>
-        <TextInput placeholder="enter a location" style={styles.input} onChangeText={text => setLocation(location)}/>
-        <View style={{ width:Dimensions.get("window").width * 1.0, flexDirection: 'row', justifyContent: 'center', marginTop: 5}}>
-          <Button onPress={getLocation}title="Show"></Button>
+        <TextInput 
+          placeholder="enter a location" 
+          style={styles.input} 
+          onChangeText={text => setLocation(location)}/>
+        <View 
+          style={{ width:Dimensions.get("window").width * 1.0, flexDirection: 'row', justifyContent: 'center', marginTop: 5}}>
+         <Button 
+          onPress={getLocation} 
+          title="Show">
+        </Button>
         </View>
       </View>
+      <StatusBar style="auto" />
     </View>
   );
 }
@@ -64,7 +74,6 @@ const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
     height: 40,
-    
     justifyContent: 'center'
   }
 });
