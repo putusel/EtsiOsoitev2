@@ -22,6 +22,11 @@ export default function App() {
         longitude: data.results[0].locations[0].latLng.lng,
         latitudeDelta: 0.0322, /*starting marker Haaga-Helia*/
         longitudeDelta: 0.0221}/*starting marker Haaga-Helia*/
+
+        /* {"info":{"statuscode":0,"copyright":{"text":"\u00A9 2022 MapQuest, Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9 2022 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},
+        "results":[{"providedLocation":{"location":"lahti"},
+        "locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Lahti","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"SOUTHERN FINLAND","adminArea3Type":"State","adminArea1":"FI","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282333075","unknownInput":"","type":"s",
+        "latLng":{"lat":60.983876,"lng":25.656181}, */
   
       setCoordinates(coordinate)
 
