@@ -49,7 +49,7 @@ export default function App() {
         <TextInput 
           placeholder="enter a location" 
           style={styles.input} 
-          onChangeText={text => setLocation(location)}/>
+          onChangeText={location => setLocation(location)}/>
         <View 
           style={{ width:Dimensions.get("window").width * 1.0, flexDirection: 'row', justifyContent: 'center', marginTop: 5}}>
          <Button 
